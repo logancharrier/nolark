@@ -51,7 +51,13 @@ function calcRemu() {
  * @return {integer}
  */
 function recupValeur(id) {
-    return parseInt(window.document.querySelector(id).value);
+    var valeur = parseInt(window.document.querySelector(id).value);
+    if (isNaN(valeur)) {
+        window.document.querySelector(id).value = 0;
+        return 0;
+    } else {
+        return valeur;
+    }
 }
 
 /**
@@ -61,8 +67,8 @@ function recupValeur(id) {
  * @return {undefined}
  */
 function afficheRemu(nombre) {
-    window.document.querySelector("#remuneration").innerHTML = 
-        "La rémunération sera de : " + nombre + " €";
+    window.document.querySelector("#remuneration").innerHTML =
+            "La rémunération sera de : " + nombre + " €";
 }
 
 /**
