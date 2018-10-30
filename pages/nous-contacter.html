@@ -16,6 +16,7 @@
         <link href="../css/carto.css" rel="stylesheet" type="text/css">
         <link href="../css/contact.css" rel="stylesheet" type="text/css">
         <link rel="icon" href="../favicon.ico">
+        <script src="../js/nolark.js" type="text/javascript"></script>
     </head>
     <body>
         <header>
@@ -51,7 +52,7 @@
         </section>
         <section id="contact">
             <h1>Nous contacter :</h1>
-            <form name="form_contact" action="http://gil83.fr/nolark/testforms.php" method="POST">
+            <form id="form_contact" name="form_contact" action="http://gil83.fr/nolark/testforms.php" method="POST">
                 <fieldset id="coordo">
                     <legend>Pour mieux vous connaître</legend>
                     <div><label for="i_nom">Votre nom :</label> <input type="text" name="i_nom" id="i_nom" size="35" pattern="^[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ\s\-]+$" required><div class="input-validation"></div></div>
@@ -139,7 +140,7 @@
                     <div><input type="radio" name="rd_motif" value="autre" id="rd_autre"> <label for="rd_autre">Autre...</label></div>
                     <div><label for="area_precisions">Si "Autre", veuillez préciser :</label><br><textarea name="area_precisions" id="area_precisions" cols="35" rows="10"></textarea></div>
                 </fieldset>
-                <div id="controles"><input type="submit" id="btn_envoyer" name="sub_envoyer" value="Envoyer votre demande de contact"> <input type="reset" name="rst_annuler" value="Effacer les réponses"></div>
+                <div id="controles"><input type="button" id="btn_envoyer" name="sub_envoyer" value="Envoyer votre demande de contact"> <input type="reset" name="rst_annuler" value="Effacer les réponses"></div>
             </form>
         </section>
         <footer>
