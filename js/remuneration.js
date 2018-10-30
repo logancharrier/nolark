@@ -38,7 +38,8 @@ function calcRemu() {
     let nbS20 = recupValeur("#num_s20");
     let nbXS = recupValeur("#num_xs");
     let nbMulti = recupValeur("#num_multi");
-    let remuneration = fixe + recupPrimeAnciennete(nbAncien, fixe) + recupComS20(nbS20) + recupComXS(nbXS) + recupComMulti(nbMulti);
+    let km = recupValeur("#num_km");
+    let remuneration = fixe + recupPrimeAnciennete(nbAncien, fixe) + recupComS20(nbS20) + recupComXS(nbXS) + recupComMulti(nbMulti) + recupIndemKm(km);
 
     // Affichage du résultat
     afficheRemu(remuneration);
@@ -129,5 +130,21 @@ function recupComMulti(nb) {
         return ((nbMultiTranche1 * prixMu * txMultiTranche1)
                 + ((nbMultiTranche2 - nbMultiTranche1) * prixMu * txMultiTranche2)
                 + ((nb - nbMultiTranche2) * prixMu * txMultiTranche3));
+    }
+}
+
+/**
+ * Fonction qui retourne l'indemnité kilométrique
+ * @param {type} nb
+ * @returns {float}
+ */
+function recupIndemKm(nb) {
+    const prix = 0.15, plafond = 350;
+    let indem = nb * prix;
+    if (indem > plafond) {
+        return plafond;
+    }
+    else {
+        return indem;
     }
 }
